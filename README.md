@@ -6,10 +6,35 @@
 
 ## 截图
 
-![](https://blogimg-1252809090.cos.ap-chengdu.myqcloud.com/WeChat_miniapp_template_chat/IMG_7479.PNG)
-![](https://blogimg-1252809090.cos.ap-chengdu.myqcloud.com/WeChat_miniapp_template_chat/IMG_7480.PNG)
+![](https://blogimg-1252809090.cos.ap-chengdu.myqcloud.com/WeChat_miniapp_template_chat/IMG.jpg)
 
-## 路径
+## 结构
+
+```
+├─cloudfunctions 
+│  ├─login
+│  |   └─index.js
+│  ├─moban
+|  |   ├─index.js
+│  |   ├─package-lock.json
+│  |   └─package.json  
+│  └─remove
+|      ├─index.js
+│      ├─package-lock.json
+│      └─package.json           　　
+├─miniprogram
+│  ├─app.js
+│  ├─app.json
+│  ├─app.wxss
+│  └─pages
+│      └─fromId
+│         ├─index.wxml
+│         ├─index.js
+│         ├─index.json
+│         └─index.wxss
+└─project.config.json
+
+```
 
 ## 云开发下发模版消息
 
@@ -21,6 +46,13 @@
 2. 由于formId只有7天时效，所以需要打上时间戳，定期将7天前的数据删除掉
 3. 在使用的时候通过目标用户openid获取formId，使用对应的openid和formId下发模版消息
 4. 每使用一个/无效的formId，需要将其删掉
+
+## 使用Demo
+
+1. 修改project.config.json中`appid`
+2. 修改miniprogram=>app.js中`env`为自己的云开发环境
+3. 上传cloudfunctions中的三个云函数
+4. 修改cloudfunctions=>moban=>index.js中的`APPID`和`SECRET`
 
 ## 代码
 
